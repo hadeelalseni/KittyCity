@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="hadeel.com.kittycity">
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +10,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.LoginActivity"></activity>
+        <receiver android:name=".Widget.KittyWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/kitty_widget_info" />
+        </receiver>
+
+        <activity android:name=".UI.LoginActivity" />
         <activity android:name=".UI.SignupActivity" />
         <activity android:name=".UI.MainActivity">
             <intent-filter>
@@ -24,7 +32,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true"/>
+            android:value="true" />
     </application>
 
 </manifest>

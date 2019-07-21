@@ -1,6 +1,7 @@
 package hadeel.com.kittycity.Fragment;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
@@ -18,12 +20,16 @@ import com.squareup.picasso.Picasso;
 
 import hadeel.com.kittycity.Common.Common;
 import hadeel.com.kittycity.R;
+import hadeel.com.kittycity.Widget.WidgetInfo;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class KittyProfileFragment extends Fragment {
     String name, image;
     TextView kitty_tv;
     ImageView kitty_iv;
     FloatingActionButton buy;
+    Button addWidgetBtn;
 
     public KittyProfileFragment() {
         // Required empty public constructor
@@ -52,6 +58,7 @@ public class KittyProfileFragment extends Fragment {
         kitty_tv = (TextView) view.findViewById(R.id.kitty_name_profile);
         kitty_iv = (ImageView) view.findViewById(R.id.kitty_image_profile);
         kitty_tv.setText(name);
+        addWidgetBtn = (Button) view.findViewById(R.id.add_wiget_btn);
         buy = (FloatingActionButton) view.findViewById(R.id.buy_kitty_fab);
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +72,15 @@ public class KittyProfileFragment extends Fragment {
             }
         });
         Picasso.get().load(image).placeholder(R.drawable.ic_cat).into(kitty_iv);
+        addWidgetBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences(WidgetInfo.kittyNameWidget, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(WidgetInfo.kittyNameWidget, name);
+                editor.apply();
+            }
+        });
 
         // Inflate the layout for this fragment
         return view;
