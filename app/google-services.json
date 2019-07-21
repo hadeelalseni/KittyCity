@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "217809021633",
+    "firebase_url": "https://kittycity-c0f92.firebaseio.com",
+    "project_id": "kittycity-c0f92",
+    "storage_bucket": "kittycity-c0f92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217809021633:android:d46f55dcccfc9fcd",
+        "android_client_info": {
+          "package_name": "hadeel.com.kittycity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217809021633-9ga84cvk460qvfrir2g2pr0gg0fj85ko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAytCa23WuJPIrbxGk0h13GIabRMFsBzfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217809021633-9ga84cvk460qvfrir2g2pr0gg0fj85ko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

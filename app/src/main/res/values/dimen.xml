@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="logo_tv_size">30sp</dimen>
+    <dimen name="paddingTop">56dp</dimen>
+    <dimen name="paddingLeft">24dp</dimen>
+    <dimen name="paddingRight">24dp</dimen>
+    <dimen name="padding">12dp</dimen>
+    <dimen name="marginTop">8dp</dimen>
+    <dimen name="marginBottom">8dp</dimen>
+    <dimen name="marginTop2">24dp</dimen>
+    <dimen name="marginBottom2">24dp</dimen>
+    <dimen name="cardElevation">4dp</dimen>
+    <dimen name="marginTop3">150dp</dimen>
+    <dimen name="marginTop4">200dp</dimen>
+    <dimen name="marginTop5">350dp</dimen>
+</resources>

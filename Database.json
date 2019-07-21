@@ -1,0 +1,58 @@
+{
+    "User": {
+        "0565558738":{
+            "username" : "Hadeel", 
+            "password" : "0000",
+            "kitties" : [
+                {
+                    "name" : "dolly", 
+                    "id" : "01", 
+                    "path" : "01"
+                },
+                {
+                    "name" : "zozo", 
+                    "id" : "02", 
+                    "path" : "02"
+                }
+            ]
+        }
+    },
+    "kitty": {
+        "01" : {
+            "name" : "Dolly Kitty",
+            "image" : "https://cdn.pixabay.com/photo/2016/03/31/23/37/animal-1297724_960_720.png"
+        },
+        "02" : {
+            "name" : "Zozo kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2012/05/03/23/13/cat-46676_960_720.png"
+        },
+        "03" : {
+            "name" : "Nani kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2012/05/02/17/31/cat-45760_960_720.png"
+        },
+        "04" : {
+            "name" : "Foo kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2016/10/27/16/01/cat-1775543_960_720.png"
+        },
+        "05" : {
+            "name" : "Pena kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2017/01/31/13/27/big-2024026_960_720.png"
+        },
+        "06" : {
+            "name" : "Lolo kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2016/06/15/15/28/kitty-1459135_960_720.png"
+        },
+        "07" : {
+            "name" : "Keke kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2012/05/07/04/05/cat-47896_960_720.png"
+        },
+        "08" : {
+            "name" : "Rari kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2013/07/13/13/14/tiger-160601_960_720.png"
+        },
+        "09" : {
+            "name" : "Titi kitty", 
+            "image" : "https://cdn.pixabay.com/photo/2018/05/09/19/31/cat-3385968_960_720.png"
+        }
+    }
+}
