@@ -10,24 +10,37 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.widget.Toast;
+
 import hadeel.com.kittycity.Common.Common;
 import hadeel.com.kittycity.Fragment.GameFragment;
 import hadeel.com.kittycity.Fragment.KittiesFragment;
 import hadeel.com.kittycity.Fragment.UserProfileFragment;
 import hadeel.com.kittycity.R;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private KittiesFragment kittiesFragment;
+    private static final String TAG = "MainActivity";
+    private AdView mAdView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewPager = (ViewPager) findViewById(R.id.container);
-        //setupViewPager(viewPager);
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
+        /*
+        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+         */
         Fragment fragment = null;
         fragment = new KittiesFragment();
         FragmentManager fm = getSupportFragmentManager();
@@ -45,13 +58,19 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.ic_home:
                         break;
                     case R.id.ic_cat:
-                        //Intent intent = new Intent(MainActivity.this, GameActivity.class);
-                        //startActivity(intent);
-                        Fragment gameFragment = null;
-                        gameFragment = new GameFragment();
-                        FragmentManager fm_ = getSupportFragmentManager();
-                        fm_.beginTransaction().replace(R.id.framelayout, gameFragment).commit();
-                        break;
+                        if(Common.currentUser != null){
+                            Fragment gameFragment = null;
+                            gameFragment = new GameFragment();
+                            FragmentManager fm_ = getSupportFragmentManager();
+                            fm_.beginTransaction().replace(R.id.framelayout, gameFragment).commit();
+                            break;
+                        }else {
+                            Toast.makeText(MainActivity.this, "Please login first.", Toast.LENGTH_LONG).show();
+                            Intent intent2 = new Intent(MainActivity.this, SignupActivity.class);
+                            startActivity(intent2);
+                            break;
+                        }
+
                     case R.id.ic_account:
                         if(Common.currentUser != null){
                             Fragment fragment = null;

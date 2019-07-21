@@ -3,17 +3,30 @@ package hadeel.com.kittycity.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import hadeel.com.kittycity.Common.Common;
+import hadeel.com.kittycity.Model.Kitty;
+import hadeel.com.kittycity.Model.User;
 import hadeel.com.kittycity.R;
+import hadeel.com.kittycity.UI.SignupActivity;
 import hadeel.com.mathquestionslib.GetCoin;
 
 public class GameFragment extends Fragment {
@@ -31,10 +44,12 @@ public class GameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz: "+Common.currentUser.getEmail());
+
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
 
-        View view = inflater.inflate(R.layout.fragment_game, container, false);
+        final View view = inflater.inflate(R.layout.fragment_game, container, false);
 
         question = (TextView) view.findViewById(R.id.question_tv);
         choice1 = (Button) view.findViewById(R.id.choice1);
@@ -42,7 +57,7 @@ public class GameFragment extends Fragment {
         choice3 = (Button) view.findViewById(R.id.choice3);
         check = (Button) view.findViewById(R.id.check);
 
-        GetCoin getCoin = new GetCoin();
+        final GetCoin getCoin = new GetCoin();
         int n1 = getCoin.getNumberOne();
         int n2 = getCoin.getNumberTwo();
         int correctAnswer = n1+n2;
@@ -54,26 +69,34 @@ public class GameFragment extends Fragment {
         choice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Toast.makeText(getActivity(), "Wrong Answer", Toast.LENGTH_LONG).show();
             }
         });
 
         choice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Toast.makeText(getActivity(), "Wrong Answer", Toast.LENGTH_LONG).show();
             }
         });
 
+        final int random = 1 + (int) (Math.random() * ((9 - 1)+1));
         choice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                System.out.println("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY: "+Common.currentUser.getEmail());
+                if(Common.choosedKitty != 0){
+                    System.out.println("Chooooooooooooooooooosed kittty : "+ Common.choosedKitty);
+                }else{
+                    //Min + (int)(Math.random() * ((Max - Min) + 1))
+                    User user = Common.currentUser;
+                    ArrayList<Integer> kittiesId = user.getKitties();
+                    kittiesId.add(random);
+                    user.setKitties(kittiesId);
+                    table_user.child(user.getEmail()).removeValue();
+                }
             }
         });
-
-
 
         // Inflate the layout for this fragment
         return view;

@@ -62,19 +62,13 @@ public class MyKittiesFragment extends Fragment {
 
             final ArrayList<Kitty> kitties = new ArrayList<>();
 
-            //System.out.println("BEFORE FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOR");
             for(int i = 0; i< userKitties.size(); i++){
                 final int test = userKitties.get(i);
-                //System.out.println("Inside FOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOR");
-
                 kitty_table.orderByChild("01").addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                         Kitty kitty = dataSnapshot.getValue(Kitty.class);
-                        //System.out.println("KIIIITTTTTTTTTIITITIITITIYYYYYYYYYYYYYYYYY: "+kitty.getName());
-                        //System.out.println("KEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEY" + dataSnapshot.getKey());
                         if(dataSnapshot.getKey().equals("0"+test)){
-                            //System.out.println("THIS WILL BE PRINTED ONCE< YES HADEEL YOU ARE EXCELLANT PROGMMER ^_^ BIG LOVE YOU.");
                             kitties.add(kitty);
                         }
                         callRecyclerViewAndAdapter(kitties);

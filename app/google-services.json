@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "217809021633-dk8hvdj4a4mgah8gq5qk5kh4ns7e9h9h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hadeel.com.kittycity",
+            "certificate_hash": "b128b769d44cdfc57b33e79f207af507595ae286"
+          }
+        },
+        {
           "client_id": "217809021633-9ga84cvk460qvfrir2g2pr0gg0fj85ko.apps.googleusercontent.com",
           "client_type": 3
         }

@@ -44,9 +44,7 @@ public class KittiesFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_kitties, container, false);
-        System.out.println("11111111111111111111111111111111111111111111111111111");
         new AsyncTask().execute();
-        System.out.println("2222222222222222222222222222222222222222222222222222");
         // Inflate the layout for this fragment
         return rootView;
     }
@@ -78,14 +76,12 @@ public class KittiesFragment extends Fragment {
         }
 
         private void callRecyclerViewAndAdapter(ArrayList<Kitty> kitties) {
-            System.out.println("33333333333333333333333333333333333333333333333333333333");
             kitty_rv = (RecyclerView) getView().findViewById(R.id.kitties_rv);
             adapter = new Adapter(getActivity(), kitties);
             kitty_rv.setAdapter(adapter);
             layoutManager = new LinearLayoutManager(getActivity());
             kitty_rv.setLayoutManager(layoutManager);
 
-            System.out.println("444444444444444444444444444444444444444444444444444444444444");
         }
 
     }

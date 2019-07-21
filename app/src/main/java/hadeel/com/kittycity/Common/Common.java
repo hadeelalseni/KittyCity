@@ -4,4 +4,5 @@ import hadeel.com.kittycity.Model.User;
 
 public class Common {
     public static User currentUser;
+    public static int choosedKitty;
 }
