@@ -20,6 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import hadeel.com.kittycity.Common.Common;
 import hadeel.com.kittycity.Model.User;
 import hadeel.com.kittycity.R;
+import hadeel.com.kittycity.Validation.Validation;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -43,6 +44,15 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Validation validation = new Validation();
+                boolean flag = validation.loginValidation(
+                        email.getText().toString(),
+                        password.getText().toString());
+                if(!flag){
+                    Toast.makeText(LoginActivity.this, "Please re fill the inputs.", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
                 progressDialog.setMessage("Wait please...");
                 progressDialog.show();

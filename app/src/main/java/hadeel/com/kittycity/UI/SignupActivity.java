@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import hadeel.com.kittycity.Model.User;
 import hadeel.com.kittycity.R;
+import hadeel.com.kittycity.Validation.Validation;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -42,6 +43,16 @@ public class SignupActivity extends AppCompatActivity {
         signubBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Validation validation = new Validation();
+                boolean flag = validation.signUpValidation(
+                        name.getText().toString(),
+                        email.getText().toString(),
+                        password.getText().toString());
+                if(!flag){
+                    Toast.makeText(SignupActivity.this, "Please re fill the inputs.", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 final ProgressDialog progressDialog = new ProgressDialog(SignupActivity.this);
                 progressDialog.setMessage("Wait please...");
                 progressDialog.show();
