@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_text">Login</string>
+    <string name="signup_link">No account yet? Create one</string>
+    <string name="password_text">Password</string>
+    <string name="name_text">Name</string>
+    <string name="signup_text">Create Account</string>
+    <string name="login_link">Already a member? Login</string>
+</resources>

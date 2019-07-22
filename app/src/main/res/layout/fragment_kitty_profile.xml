@@ -16,13 +16,13 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:elevation="4dp">
+        android:layout_height="@dimen/appBar_height"
+        android:elevation="@dimen/appBar_elevation">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -34,19 +34,12 @@
 
                 <TextView
                     android:id="@+id/kitty_name_profile"
-                    android:textSize="30sp"
-                    android:text="Hello Kitty "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_collapseMode="pin"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-                <Button
-                    android:id="@+id/add_wiget_btn"
-                    android:text="Add widget"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
+                    android:text="Hello Kitty "
+                    android:textSize="@dimen/thirty_text_size"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_collapseMode="pin" />
 
             </android.support.v7.widget.Toolbar>
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -54,20 +47,31 @@
     </android.support.v4.widget.SwipeRefreshLayout>
     <ImageView
         android:id="@+id/kitty_image_profile"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="@dimen/image_marginTop"
         android:layout_width="match_parent"
-        android:layout_height="400dp" />
+        android:layout_height="@dimen/image_height" />
+
+    <Button
+        android:id="@+id/add_wiget_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/oval"
+        android:text="@string/add_widget_text"
+        android:textAlignment="center"
+        app:layout_anchor="@+id/swipe_refresh_layout"
+         />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/buy_kitty_fab"
         android:layout_width="wrap_content"
-        android:layout_height="146dp"
+        android:layout_height="@dimen/fab_height"
         android:clickable="true"
         app:layout_anchor="@+id/swipe_refresh_layout"
         app:layout_anchorGravity="bottom|right"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_shopping"
-        android:elevation="6dp"
+        android:elevation="@dimen/fab_elevation"
         android:focusable="true"
         tools:ignore="VectorDrawableCompat" />
 

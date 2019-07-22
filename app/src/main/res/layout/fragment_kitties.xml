@@ -8,7 +8,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/kitties_rv"
         android:layout_width="match_parent"
-        android:layout_height="693dp"
+        android:layout_height="@dimen/rv_height"
         android:scrollbars="vertical">
     </android.support.v7.widget.RecyclerView>
 

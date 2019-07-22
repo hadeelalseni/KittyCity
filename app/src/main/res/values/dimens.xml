@@ -6,5 +6,23 @@ Refer to App Widget Documentation for margin information
 http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
     -->
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="btn_text_size">60sp</dimen>
+    <dimen name="question_text_size">80sp</dimen>
+    <dimen name="rv_height">693dp</dimen>
+    <dimen name="appBar_height">112dp</dimen>
+    <dimen name="appBar_elevation">4dp</dimen>
+    <dimen name="thirty_text_size">30sp</dimen>
+    <dimen name="fab_elevation">6dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="fab_height">146dp</dimen>
+    <dimen name="image_marginTop">112dp</dimen>
+    <dimen name="image_height">400dp</dimen>
+    <dimen name="myKitties_rv_height">693dp</dimen>
+    <dimen name="appCompatButton_width">300dp</dimen>
+    <dimen name="appCompatButton_height">100dp</dimen>
+    <dimen name="appCompatButton_marginLeft">30dp</dimen>
+    <dimen name="appwidget_text_size">24sp</dimen>
+    <dimen name="appwidget_margin">8dp</dimen>
+    <dimen name="cardLayout_height">400dp</dimen>
 
 </resources>

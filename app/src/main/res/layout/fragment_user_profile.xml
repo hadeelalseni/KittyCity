@@ -9,8 +9,8 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/toolbar_container"
         android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:elevation="4dp">
+        android:layout_height="@dimen/appBar_height"
+        android:elevation="@dimen/appBar_elevation">
 
         <android.support.design.widget.CollapsingToolbarLayout
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -27,7 +27,7 @@
 
                 <TextView
                     android:id="@+id/user_name_profile"
-                    android:textSize="30sp"
+                    android:textSize="@dimen/thirty_text_size"
                     android:text="Hello User "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -49,24 +49,24 @@
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/my_kitties_btn"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/appCompatButton_width"
+            android:layout_height="@dimen/appCompatButton_height"
             android:gravity="center"
-            android:text="My Kitties"
-            android:textSize="30sp"
+            android:text="@string/my_kitties_text"
+            android:textSize="@dimen/thirty_text_size"
             android:background="@color/colorPrimaryDark"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="@dimen/appCompatButton_marginLeft"/>
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/setting_btn"
-            android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/appCompatButton_width"
+            android:layout_height="@dimen/appCompatButton_height"
             android:gravity="center"
-            android:text="Settings"
-            android:textSize="30sp"
+            android:text="@string/settings_text"
+            android:textSize="@dimen/thirty_text_size"
             android:background="@color/colorPrimaryDark"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="@dimen/appCompatButton_marginLeft"/>
 
     </LinearLayout>
 

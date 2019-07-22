@@ -12,5 +12,7 @@
     <color name="red">#F44336</color>
     <color name="green">#8BC34A</color>
     <color name="blue">#00BCD4</color>
+    <color name="BlackColor">#000000</color>
+    <color name="colorText">#4f0e0d0e</color>
 
 </resources>

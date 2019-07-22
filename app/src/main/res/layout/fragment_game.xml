@@ -13,35 +13,26 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:textSize="80sp"
-        android:text="11 + 55 = ?" />
+        android:textSize="@dimen/question_text_size"
+         />
 
     <Button
-        android:text="33"
         android:id="@+id/choice1"
-        android:textSize="60sp"
+        android:textSize="@dimen/btn_text_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:text="33"
         android:id="@+id/choice2"
-        android:textSize="60sp"
+        android:textSize="@dimen/btn_text_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:text="33"
         android:id="@+id/choice3"
-        android:textSize="60sp"
+        android:textSize="@dimen/btn_text_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:text="Check Answer"
-        android:id="@+id/check"
-        android:textSize="50sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
 </LinearLayout>

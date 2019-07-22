@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="400dp"
+    android:layout_height="@dimen/cardLayout_height"
     app:cardElevation="@dimen/cardElevation">
 
     <RelativeLayout
-        android:background="#98dd"
+        android:background="@color/colorPrimaryDark"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -21,9 +21,9 @@
         <TextView
             android:id="@+id/one_card_kitty_tv"
             android:text="Kitty name"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="30sp"
-            android:background="#4f0e0d0e"
+            android:textColor="@color/BlackColor"
+            android:textSize="@dimen/thirty_text_size"
+            android:background="@color/colorText"
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"

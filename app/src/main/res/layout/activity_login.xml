@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone"
-                android:hint="Phone number" />
+                android:hint="@string/phone_text" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:hint="Password"/>
+                android:hint="@string/password_text"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -57,13 +57,13 @@
             android:layout_marginTop="@dimen/marginTop2"
             android:layout_marginBottom="@dimen/marginBottom2"
             android:padding="@dimen/padding"
-            android:text="Login"/>
+            android:text="@string/login_text"/>
 
         <TextView android:id="@+id/link_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/marginBottom2"
-            android:text="No account yet? Create one"
+            android:text="@string/signup_link"
             android:gravity="center"
             android:textSize="16dip"/>
 

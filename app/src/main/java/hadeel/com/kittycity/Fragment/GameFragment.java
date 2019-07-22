@@ -31,7 +31,7 @@ import hadeel.com.mathquestionslib.GetCoin;
 
 public class GameFragment extends Fragment {
     TextView question;
-    Button choice1, choice2, choice3, check;
+    Button choice1, choice2, choice3;
     public GameFragment() {
         // Required empty public constructor
     }
@@ -44,8 +44,6 @@ public class GameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        System.out.println("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz: "+Common.currentUser.getEmail());
-
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
 
@@ -55,7 +53,7 @@ public class GameFragment extends Fragment {
         choice1 = (Button) view.findViewById(R.id.choice1);
         choice2 = (Button) view.findViewById(R.id.choice2);
         choice3 = (Button) view.findViewById(R.id.choice3);
-        check = (Button) view.findViewById(R.id.check);
+
 
         final GetCoin getCoin = new GetCoin();
         int n1 = getCoin.getNumberOne();
@@ -84,7 +82,6 @@ public class GameFragment extends Fragment {
         choice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("YYYYYYYYYYYYYYYYYYYYYYYYYYYYYY: "+Common.currentUser.getEmail());
                 if(Common.choosedKitty != 0){
                     System.out.println("Chooooooooooooooooooosed kittty : "+ Common.choosedKitty);
                 }else{
