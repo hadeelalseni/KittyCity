@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            storeFile file("$rootDir/keystore.jks")
+            storePassword '000000'
+            keyAlias = 'key0'
+            keyPassword '000000'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "hadeel.com.kittycity"
@@ -14,6 +22,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }
