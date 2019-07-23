@@ -1,6 +1,9 @@
 package hadeel.com.kittycity.Validation;
 
 import android.util.Patterns;
+import android.widget.Toast;
+
+import hadeel.com.kittycity.UI.SignupActivity;
 
 public class Validation {
 
@@ -8,6 +11,7 @@ public class Validation {
 
         boolean flag = true;
         if(name.isEmpty() || name.length() < 3){
+            //Toast.makeText(SignupActivity.this, "Name is empty or has less than 3 char.", Toast.LENGTH_LONG).show();
             flag = false;
         }
         if(email.isEmpty() || !Patterns.PHONE.matcher(email).matches()){

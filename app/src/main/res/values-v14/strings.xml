@@ -6,4 +6,5 @@
     <string name="name_text">Name</string>
     <string name="signup_text">Create Account</string>
     <string name="login_link">Already a member? Login</string>
+    <string name="kitty_image_profile">Kitty Image</string>
 </resources>

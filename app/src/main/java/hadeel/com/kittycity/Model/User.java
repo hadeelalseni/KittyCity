@@ -1,8 +1,11 @@
 package hadeel.com.kittycity.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
-public class User{
+public class User implements Parcelable {
     private String username;
     private String email;
     private String password;
@@ -16,6 +19,24 @@ public class User{
         this.email = email;
         this.password = password;
     }
+
+    protected User(Parcel in) {
+        username = in.readString();
+        email = in.readString();
+        password = in.readString();
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 
     public String getUsername() {
         return username;
@@ -47,5 +68,17 @@ public class User{
 
     public void setKitties(ArrayList<Integer> kitties) {
         this.kitties = kitties;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(username);
+        parcel.writeString(email);
+        parcel.writeString(password);
     }
 }

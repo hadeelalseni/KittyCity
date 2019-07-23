@@ -4,13 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.GameFragment"
-    android:layout_marginTop="@dimen/marginTop2"
+    android:layout_marginTop="@dimen/marginTop3"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/question_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/game_btn_margin"
         android:ems="10"
         android:inputType="text"
         android:textSize="@dimen/question_text_size"
@@ -18,19 +21,25 @@
 
     <Button
         android:id="@+id/choice1"
+        android:background="@color/colorPrimary"
         android:textSize="@dimen/btn_text_size"
+        android:layout_margin="@dimen/game_btn_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/choice2"
+        android:background="@color/colorPrimary"
         android:textSize="@dimen/btn_text_size"
+        android:layout_margin="@dimen/game_btn_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/choice3"
+        android:background="@color/colorPrimary"
         android:textSize="@dimen/btn_text_size"
+        android:layout_margin="@dimen/game_btn_margin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

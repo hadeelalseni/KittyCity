@@ -40,8 +40,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:paddingTop="@dimen/paddingTop"
-        android:paddingLeft="@dimen/paddingLeft"
-        android:paddingRight="@dimen/paddingRight"
+        android:paddingStart="@dimen/paddingLeft"
+        android:paddingEnd="@dimen/paddingRight"
         android:layout_marginTop="@dimen/marginTop3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -55,7 +55,7 @@
             android:text="@string/my_kitties_text"
             android:textSize="@dimen/thirty_text_size"
             android:background="@color/colorPrimaryDark"
-            android:layout_marginLeft="@dimen/appCompatButton_marginLeft"/>
+            android:layout_marginStart="@dimen/appCompatButton_marginLeft"/>
 
 
 

@@ -10,11 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import hadeel.com.kittycity.Common.Common;
+import hadeel.com.kittycity.Model.User;
 import hadeel.com.kittycity.R;
 
 public class UserProfileFragment extends Fragment {
     TextView user_profile_name;
-    AppCompatButton myKittiesBtn, settingsBtn;
+    AppCompatButton myKittiesBtn;
     public UserProfileFragment() {}
     @Override
     public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
@@ -26,6 +27,8 @@ public class UserProfileFragment extends Fragment {
 
         user_profile_name = (TextView) view.findViewById(R.id.user_name_profile);
         user_profile_name.setText("Hello "+ Common.currentUser.getUsername());
+        User user = Common.currentUser;
+        Common.currentUser = user;
 
         myKittiesBtn = (AppCompatButton) view.findViewById(R.id.my_kitties_btn);
         myKittiesBtn.setOnClickListener(new View.OnClickListener() {

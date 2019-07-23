@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -27,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText email, password;
     private AppCompatButton loginBtn;
     private TextView signupLink;
-
+    private String errMsg = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                         email.getText().toString(),
                         password.getText().toString());
                 if(!flag){
-                    Toast.makeText(LoginActivity.this, "Please re fill the inputs.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, errMsg, Toast.LENGTH_LONG).show();
                     return;
                 }
                 final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
@@ -64,8 +65,8 @@ public class LoginActivity extends AppCompatActivity {
 
                             User user = dataSnapshot.child(email.getText().toString()).getValue(User.class);
                             if(user.getPassword().equals(password.getText().toString())){
-                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 Common.currentUser = user;
+                                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
                             }else{
@@ -92,5 +93,17 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public boolean loginValidation(String email, String password){
+        boolean flag = true;
+        if(email.isEmpty() || !Patterns.PHONE.matcher(email).matches()){
+            errMsg = errMsg + "Phone number is empty or not a phone pattren.\n";
+            flag = false;
+        }
+        if(password.isEmpty() || password.length() < 4 || password.length() > 10){
+            errMsg = errMsg + "Password is empty or has less than 4 char or more than 10 char.\n";
+            flag = false;
+        }
+        return flag;
     }
 }

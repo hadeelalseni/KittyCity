@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -63,11 +64,25 @@ public class KittyProfileFragment extends Fragment {
         buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Common.choosedKitty = 03;
-                Fragment fragment = null;
-                fragment = new GameFragment();
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                fm.beginTransaction().replace(R.id.framelayout, fragment).commit();
+                if(Common.currentUser == null){
+                    Toast.makeText(getActivity()," You have to login first to buy.", Toast.LENGTH_LONG);
+                }
+                if(Common.currentUser!=null){
+                    System.out.println("Kitty Profile Fragment: "+ Common.currentUser.getUsername());
+                    final Bundle b = new Bundle();
+                    b.putParcelable("User", Common.currentUser);
+                    Fragment fragment = null;
+                    fragment = new GameFragment();
+                    fragment.setArguments(b);
+                    FragmentManager fm = getActivity().getSupportFragmentManager();
+                    fm.beginTransaction().replace(R.id.framelayout, fragment).commit();
+                }
+                /*else{
+                    Toast.makeText(getActivity()," You have to login first to buy.", Toast.LENGTH_LONG);
+                }*/
+                Toast.makeText(getActivity()," You have to login first to buy.", Toast.LENGTH_LONG);
+
+
 
             }
         });
@@ -79,6 +94,7 @@ public class KittyProfileFragment extends Fragment {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(WidgetInfo.kittyNameWidget, name);
                 editor.apply();
+                Toast.makeText(getActivity(), "Widget Added successfully", Toast.LENGTH_LONG).show();
             }
         });
 

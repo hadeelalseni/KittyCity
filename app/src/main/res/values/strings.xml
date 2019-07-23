@@ -15,5 +15,7 @@
     <string name="my_kitties_text">My Kitties</string>
     <string name="settings_text">Settings</string>
     <string name="login_text">Login</string>
+    <string name="kitty_image_profile">Kitty Image</string>
+    <string name="kitty_image">Kitty Image</string>
 
 </resources>

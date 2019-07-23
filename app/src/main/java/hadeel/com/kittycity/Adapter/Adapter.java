@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
+import hadeel.com.kittycity.Common.Common;
 import hadeel.com.kittycity.Fragment.KittyProfileFragment;
 import hadeel.com.kittycity.Model.Kitty;
 import hadeel.com.kittycity.R;
@@ -43,10 +44,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         viewHolder.kittyImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 AppCompatActivity appCompatActivity = (AppCompatActivity) view.getContext();
                 Bundle b = new Bundle();
                 b.putString("name",kitties.get(i).getName());
                 b.putString("image",kitties.get(i).getImage());
+                Common.choosedKitty = i;
                 Fragment fragment = new KittyProfileFragment();
                 fragment.setArguments(b);
                 appCompatActivity.getSupportFragmentManager().beginTransaction()

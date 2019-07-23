@@ -95,7 +95,6 @@
                 android:background="@drawable/grey_border_top"
                 app:menu="@menu/bottom_nav_menu">
 
-
             </android.support.design.widget.BottomNavigationView>
 
         </RelativeLayout>

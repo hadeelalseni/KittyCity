@@ -16,7 +16,8 @@
             android:layout_height="match_parent"
             android:id="@+id/one_card_kitty_iv"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_cat"/>
+            android:src="@drawable/ic_cat"
+            android:contentDescription="@string/kitty_image"/>
 
         <TextView
             android:id="@+id/one_card_kitty_tv"

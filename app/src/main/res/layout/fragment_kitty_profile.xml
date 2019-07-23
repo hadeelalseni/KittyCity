@@ -49,7 +49,8 @@
         android:id="@+id/kitty_image_profile"
         android:layout_marginTop="@dimen/image_marginTop"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/image_height" />
+        android:layout_height="@dimen/image_height"
+        android:contentDescription="@string/kitty_image_profile"/>
 
     <Button
         android:id="@+id/add_wiget_btn"

@@ -38,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        /*
-        xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-         */
+
         Fragment fragment = null;
         fragment = new KittiesFragment();
         FragmentManager fm = getSupportFragmentManager();
@@ -56,20 +54,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.ic_home:
+                        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent);
                         break;
-                    case R.id.ic_cat:
-                        if(Common.currentUser != null){
-                            Fragment gameFragment = null;
-                            gameFragment = new GameFragment();
-                            FragmentManager fm_ = getSupportFragmentManager();
-                            fm_.beginTransaction().replace(R.id.framelayout, gameFragment).commit();
-                            break;
-                        }else {
-                            Toast.makeText(MainActivity.this, "Please login first.", Toast.LENGTH_LONG).show();
-                            Intent intent2 = new Intent(MainActivity.this, SignupActivity.class);
-                            startActivity(intent2);
-                            break;
-                        }
 
                     case R.id.ic_account:
                         if(Common.currentUser != null){

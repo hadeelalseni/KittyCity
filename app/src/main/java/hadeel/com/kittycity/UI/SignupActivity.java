@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,7 +26,7 @@ public class SignupActivity extends AppCompatActivity {
     private EditText name, email, password;
     private AppCompatButton signubBtn;
     private TextView linkLogin;
-
+    private String errMsg = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +45,14 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Validation validation = new Validation();
-                boolean flag = validation.signUpValidation(
+                //Validation validation = new Validation();
+
+                boolean flag = signUpValidation(
                         name.getText().toString(),
                         email.getText().toString(),
                         password.getText().toString());
                 if(!flag){
-                    Toast.makeText(SignupActivity.this, "Please re fill the inputs.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SignupActivity.this, errMsg, Toast.LENGTH_LONG).show();
                     return;
                 }
                 final ProgressDialog progressDialog = new ProgressDialog(SignupActivity.this);
@@ -93,6 +95,25 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+    }
+    public boolean signUpValidation(String name, String email, String password){
+
+        boolean flag = true;
+        if(name.isEmpty() || name.length() < 3){
+            errMsg = errMsg + "Name is empty or has less than 3 char.\n";
+            flag = false;
+        }
+        if(email.isEmpty() || !Patterns.PHONE.matcher(email).matches()){
+            errMsg = errMsg + "Phone number is empty or not a phone pattren.\n";
+            flag = false;
+        }
+        if(password.isEmpty() || password.length() < 4 || password.length() > 10){
+            errMsg = errMsg + "Password is empty or has less than 4 char or more than 10 char.\n";
+            flag = false;
+        }
+        return flag;
     }
 
 
